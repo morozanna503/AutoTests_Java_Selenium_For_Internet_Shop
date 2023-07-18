@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AutoTests_Java_Selenium_For_Internet_Shop" />
+        <module name="InternetShop" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AutoTests_Java_Selenium_For_Internet_Shop" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

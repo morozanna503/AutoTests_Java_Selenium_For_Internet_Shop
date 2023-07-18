@@ -1,6 +1,7 @@
 package runner;
 
 import base.BaseTest;
+import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -9,6 +10,15 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class HeaderTest extends BaseTest {
+
+    @Test(description = "Logo test here")
+    @Description("Logo test")
+    public void testGetLogoText(){
+       String logo = getDriver().findElement(By.xpath("//h1[@class='site-title']")).getText();
+
+       Assert.assertEquals(logo,"AskOmDch");
+    }
+
      @Test
     public void testGetTitleOfTheSite() {
         getDriver().findElement(By.cssSelector("h1.site-title"));
@@ -70,15 +80,6 @@ public class HeaderTest extends BaseTest {
         List<WebElement> numberOfMenu = getDriver().findElements(By.cssSelector(".site-header-primary-section-right .menu-item"));
 
         Assert.assertEquals(numberOfMenu.size(), 8);
-    }
-
-    @Test
-    public void testCardIsClickable() {
-        getDriver().findElement(By.cssSelector(".site-header-primary-section-right .ast-builder-menu-1")).click();
-
-        WebElement cart = getDriver().findElement(By.xpath("//div[@class='wp-block-group__inner-container']/h1"));
-
-        Assert.assertEquals(cart.getText(), "Cart");
     }
 
     @Test

@@ -18,9 +18,10 @@ public class BaseTest {
     @BeforeMethod
     protected void beforeMethod() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless", "--window-size=1920,1080");
+        chromeOptions.addArguments( "--window-size=1920,1080");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.get("https://askomdch.com/");
     }
 
     @AfterMethod
